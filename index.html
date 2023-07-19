@@ -446,8 +446,9 @@
 			const dashboardCanvas = document.querySelector('.dashboard-section__canvas');
 			const dashboardAnimation = new Application(dashboardCanvas);
 dashboardAnimation.load('https://prod.spline.design/ZBr2tXh2Yx7e0h0x/scene.splinecode');
-const heroCanvas = document.querySelector('.hero-section__canvas');
-const heroSection = document.querySelector('.hero-section');
+const footerCanvas = document.querySelector('.footer__canvas');
+const footer = document.querySelector('.footer');
+			
 const observer1 = new MutationObserver((mutationsList) => {
 	for (const mutation of mutationsList) {
 		if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
