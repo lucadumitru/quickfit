@@ -446,6 +446,24 @@
 			const dashboardCanvas = document.querySelector('.dashboard-section__canvas');
 			const dashboardAnimation = new Application(dashboardCanvas);
 dashboardAnimation.load('https://prod.spline.design/ZBr2tXh2Yx7e0h0x/scene.splinecode');
+const heroCanvas = document.querySelector('.hero-section__canvas');
+const heroSection = document.querySelector('.hero-section');
+const observer1 = new MutationObserver((mutationsList) => {
+	for (const mutation of mutationsList) {
+		if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+			// Check if the class 'start-animation' is added to the footerCanvas element
+			if (footer.classList.contains('_watcher-view')) {
+				const footerAnimation = new Application(footerCanvas);
+				footerAnimation.load('https://prod.spline.design/Vz-5Vt6JIZf88hZk/scene.splinecode');
+				footerAnimation.play(); // Start the animation
+
+				// Disconnect the observer once the animation is started
+				observer1.disconnect();
+			}
+		}
+	}
+});
+			observer1.observe(footer, { attributes: true });
 
 		</script>
 		<script src="js/app.min.js?_v=20230719175156"></script>
